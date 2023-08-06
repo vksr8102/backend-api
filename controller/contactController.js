@@ -23,13 +23,8 @@ const getContact = asyncHandler(async(req,res)=>{
 })
 
 const createContact =asyncHandler(async(req,res)=>{
-    const {name,email,phone,address,message}=req.body;
-    if(!name || !email || !phone || !address){
-        res.status(400);
-        throw new Error("Please provide name ,email,phone,address");
-    }
-    const result = await Contact.create({
-        email,name,phone,address,message
+   const result = await Contact.create({
+        ...req.body
     })
    res.status(200).json(result)
 })
