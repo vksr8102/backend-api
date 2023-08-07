@@ -4,7 +4,7 @@ const errorHandler = require("./middleware/errorHandler")
 const connectDB = require("./config/db");
 const cors = require("cors")
 const app = express();
-const port =process.env.PORT || 5000;
+const port =process.env.PORT || 3000;
 //use for parse the data
 connectDB()
 app.use(cors());
